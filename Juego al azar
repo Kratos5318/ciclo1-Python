@@ -1,0 +1,26 @@
+import random # código extra 
+listaOpciones = ["perro", "gato", "lapiz", "casa", "celular"]
+cosaLista = random.choice(listaOpciones)
+mensaje = "Las opciones son: ", listaOpciones,  "\n Ingrese una cosa: "
+puntos = 0
+opcionSalir = "salir"
+opcionUsuario = input(str(mensaje) )
+while(opcionUsuario != opcionSalir):
+    if cosaLista == opcionUsuario:
+        puntos = puntos + 1
+        print("Excelente, acertaste, sos un crack")
+        print("Escoge otra cosa o escribe salir para abandonar el juego")
+        print("Llevas ", puntos, " puntos.")
+        cosaLista = random.choice(listaOpciones)
+        opcionUsuario = input(str(mensaje) )
+       
+    #    puntos += 1
+    elif cosaLista != opcionUsuario:
+        print("La cosa tiene longitud ", len(cosaLista))
+        print("La primera letra es: " , cosaLista[0])
+        print("Sigue intentando, mejor suerte a la proxima")
+        opcionUsuario = input(str(mensaje) )
+    else:
+        print("algo raro paso. ")
+        break
+print("la cosa era: ", cosaLista )
